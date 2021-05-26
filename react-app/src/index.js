@@ -1,15 +1,44 @@
-import React from 'react';
-import ReactDOM from 'react-dom';
+import React from "react";
+import ReactDOM from "react-dom";
 
+import Card from "./components/Card";
+import Collapse from "./components/Collapse";
 
-
-function App() {
-    return (
+const App = () => {
+  return (
     <div>
-        <button type="button" style={{padding:'10px', color:'white', backgroundColor:'red'}}>JSX Button</button>
+      <div className="card-group">
+        
+        <Collapse href="collapseExample1"> 
+          <Card
+            cardTitle="Card Title I"
+            cardText="Lorem ipsum text 1"
+            updatedTime="Last updated 1 min ago"
+            image="https://picsum.photos/id/1/200/300"
+          />
+        </Collapse>
+
+        <Collapse href="collapseExample2">
+          <Card
+            cardTitle="Card Title II"
+            cardText="Lorem ipsum text 2"
+            updatedTime="Last updated 2 min ago"
+            image="https://picsum.photos/id/10/200/300"
+          />
+        </Collapse>
+
+        <Collapse href="collapseExample3">
+          <Card
+            cardTitle="Card Title III"
+            cardText="Lorem ipsum text 3"
+            updatedTime="Last updated 3 min ago"
+            image="https://picsum.photos/id/100/200/300"
+          />
+        </Collapse>
+      </div>
     </div>
-    );
-}
+  );
+};
 
 /*class App extends React.Component{
     render() {
@@ -18,6 +47,6 @@ function App() {
 }*/
 
 ReactDOM.render(
-    <App></App>, 
-    document.querySelector('#root') //document.getElementById('root') 
+  <App> </App>,
+  document.querySelector("#root") //document.getElementById('root')
 );
